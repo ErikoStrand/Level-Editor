@@ -12,9 +12,9 @@ class Shooter:
     def update(self, dt):
         self.direction = 0
         keys = pygame.key.get_pressed()  #checking pressed keys
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             self.direction = -1
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.direction = 1
         if (not(self.position.x < 0 and self.direction == -1) and not(self.position.x + self.width > 900 and self.direction == 1)):
             self.position.xy = (self.position.x + self.direction*320*dt, self.position.y) 
